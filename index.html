@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DV Agent OS | The Real Estate Operating System for Dream Valley Realty Agents</title>
+<meta name="description" content="DV Agent OS replies to every new lead by text, email and chat in under a minute, 24/7, and keeps following up until they book. Built for Dream Valley Realty agents across the GTA.">
+<meta name="theme-color" content="#0f2141">
+<link rel="icon" type="image/png" href="https://www.dreamvalleyrealty.ca/logo1.png">
+<link rel="apple-touch-icon" href="https://www.dreamvalleyrealty.ca/logo1.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DV Agent OS | Every missed follow-up is a lost deal">
+<meta property="og:description" content="Instant replies, a 24/7 AI assistant and automated follow-up for Dream Valley Realty agents.">
+<meta property="og:image" content="https://www.dreamvalleyrealty.ca/Hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+<link rel="preload" as="image" href="https://www.dreamvalleyrealty.ca/Hero.png">
+<style>
+.dvos{--navy:#0f2141;--navy2:#162b52;--navy3:#0a172f;--gold:#b19d78;--gold2:#9a8662;--gold3:#d9c9a8;--ink:#1c2433;--muted:#5d6676;--line:#e7e3da;--cream:#f8f6f1;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);line-height:1.6;font-size:15.5px;background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.dvos *{box-sizing:border-box}
+.dvos a{color:inherit}
+.dvos img{max-width:100%;display:block}
+.dvos .wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.dvos h1,.dvos h2,.dvos h3{font-family:"Playfair Display",Georgia,serif;color:var(--navy);margin:0;line-height:1.15;font-weight:700}
+.dvos h2{font-size:clamp(28px,3.6vw,42px);text-wrap:balance}
+.dvos h3{font-size:20px}
+.dvos em{font-style:normal;color:var(--gold)}
+.dvos .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.dvos .eyebrow:before{content:"";width:28px;height:2px;background:var(--gold)}
+.dvos .center{text-align:center}
+.dvos .center .eyebrow:after{content:"";width:28px;height:2px;background:var(--gold)}
+.dvos .shead{max-width:760px;margin:0 auto 46px}
+.dvos .shead h2{margin:12px 0 12px}
+.dvos .shead p{color:var(--muted);margin:0;font-size:16.5px}
+.dvos section{padding:88px 0}
+.dvos .bg-cream{background:var(--cream)}
+.dvos .bg-navy{background:var(--navy);color:rgba(255,255,255,.82)}
+.dvos .bg-navy h2,.dvos .bg-navy h3{color:#fff}
+.dvos .bg-navy .shead p{color:rgba(255,255,255,.75)}
+/* buttons */
+.dvos .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14.5px;text-decoration:none;transition:all .2s;border:2px solid transparent;cursor:pointer;white-space:nowrap}
+.dvos .btn-gold{background:var(--gold);color:#fff;box-shadow:0 8px 22px rgba(177,157,120,.35)}
+.dvos .btn-gold:hover{background:var(--gold2)}
+.dvos .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.dvos .btn-ghost:hover{background:#fff;color:var(--navy)}
+.dvos .btn-navy{background:var(--navy);color:#fff}
+.dvos .btn-navy:hover{background:var(--navy2)}
+.dvos .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+/* nav */
+.dvos .nav{position:sticky;top:0;z-index:50;background:rgba(15,33,65,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.dvos .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.dvos .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.dvos .logo img{height:44px;width:auto}
+.dvos .logo span{color:#fff;font-weight:700;letter-spacing:2px;font-size:13px;line-height:1.2}
+.dvos .logo span b{display:block;color:var(--gold);font-weight:600;letter-spacing:3px;font-size:10.5px}
+.dvos .links{display:flex;gap:26px}
+.dvos .links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;font-weight:500}
+.dvos .links a:hover{color:var(--gold)}
+.dvos .nav .btn{padding:10px 20px;font-size:13.5px}
+@media(max-width:900px){.dvos .links{display:none}}
+/* hero */
+.dvos .hero{position:relative;background:var(--navy) url("https://www.dreamvalleyrealty.ca/Hero.png") center/cover no-repeat;color:#fff;text-align:center;padding:84px 0 70px}
+.dvos .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(177,157,120,.22) 0%,rgba(15,33,65,0) 55%),linear-gradient(180deg,rgba(15,33,65,.94) 0%,rgba(10,23,47,.92) 100%)}
+.dvos .hero .wrap{position:relative;max-width:900px}
+.dvos .pill{display:inline-block;padding:8px 18px;border-radius:999px;border:1px solid rgba(177,157,120,.5);background:rgba(177,157,120,.1);color:var(--gold3);font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.dvos .hero h1{color:#fff;font-size:clamp(36px,6vw,66px);margin:22px 0 16px;letter-spacing:-.5px}
+.dvos .hero .lead{font-size:18px;color:rgba(255,255,255,.85);margin:0 auto 32px;max-width:600px}
+.dvos .hero .lead b{color:var(--gold);font-weight:600}
+.dvos .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:720px;margin:0 auto 34px;text-align:left}
+@media(max-width:620px){.dvos .tiles{grid-template-columns:1fr}}
+.dvos .tile{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:14px;color:rgba(255,255,255,.9)}
+.dvos .tile i{flex:0 0 26px;height:26px;border-radius:8px;background:rgba(177,157,120,.18);color:var(--gold);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;font-weight:700}
+.dvos .trust{margin-top:26px;display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.7)}
+.dvos .trust .st{color:var(--gold);letter-spacing:2px}
+/* marquee */
+.dvos .strip{background:var(--navy3);border-top:1px solid rgba(255,255,255,.06);overflow:hidden;padding:14px 0}
+.dvos .track{display:flex;gap:44px;width:max-content;animation:dvosScroll 40s linear infinite}
+.dvos .track span{color:rgba(255,255,255,.75);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+.dvos .track span:before{content:"\25C6";color:var(--gold);margin-right:12px;font-size:9px;vertical-align:2px}
+@keyframes dvosScroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.dvos .track{animation:none}}
+/* stats */
+.dvos .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media(max-width:860px){.dvos .stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dvos .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+.dvos .stat b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:40px;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
+.dvos .stat b small{font-size:22px;color:var(--gold)}
+.dvos .stat span{display:block;margin-top:10px;color:var(--muted);font-size:14px}
+/* AI demo */
+.dvos .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media(max-width:900px){.dvos .split{grid-template-columns:1fr;gap:36px}}
+.dvos .phone{background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.35);overflow:hidden;max-width:440px;margin:0 auto;color:var(--ink)}
+.dvos .phead{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--cream);border-bottom:1px solid var(--line);font-size:12.5px}
+.dvos .phead b{color:var(--navy)}
+.dvos .live{display:inline-flex;align-items:center;gap:6px;color:#1f7a4d;font-weight:600}
+.dvos .live:before{content:"";width:8px;height:8px;border-radius:50%;background:#2fa36b}
+.dvos .chat{padding:18px;display:grid;gap:10px;font-size:14px}
+.dvos .msg{max-width:82%;padding:10px 14px;border-radius:16px;line-height:1.45}
+.dvos .msg.in{background:#eef0f4;border-bottom-left-radius:4px}
+.dvos .msg.out{background:var(--navy);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.dvos .tags{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 18px}
+.dvos .tags span{font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--cream);border:1px solid var(--line);color:var(--navy)}
+.dvos .tags span.ok{background:#e3f3ea;border-color:#c7e6d4;color:#1f7a4d}
+.dvos .mini{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:26px 0}
+.dvos .mini div{border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px}
+.dvos .mini b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:26px;color:var(--gold)}
+.dvos .mini span{font-size:13px;color:rgba(255,255,255,.7)}
+.dvos .points{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.dvos .points li{display:flex;gap:14px}
+.dvos .points .n{flex:0 0 34px;height:34px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);font-family:"Playfair Display",serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}
+.dvos .points b{color:#fff;display:block}
+.dvos .points span{font-size:14px;color:rgba(255,255,255,.7)}
+/* cards */
+.dvos .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media(max-width:900px){.dvos .cards{grid-template-columns:1fr}}
+.dvos .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:grid;gap:12px;align-content:start}
+.dvos .card .ic{width:46px;height:46px;border-radius:12px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px}
+.dvos .card p{margin:0;color:var(--muted);font-size:14.5px}
+.dvos .card ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:14px}
+.dvos .card li{padding-left:22px;position:relative}
+.dvos .card li:before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:700}
+/* pipeline mock */
+.dvos .pipe{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:6px}
+@media(max-width:620px){.dvos .pipe{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.dvos .pipe div{background:var(--cream);border-radius:10px;padding:10px;font-size:11.5px;color:var(--muted)}
+.dvos .pipe b{display:block;font-size:18px;color:var(--navy);font-family:"Playfair Display",serif}
+/* stages */
+.dvos .stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:st}
+@media(max-width:900px){.dvos .stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.dvos .stages{grid-template-columns:1fr}}
+.dvos .stage{position:relative;background:#fff;border-radius:16px;padding:26px 22px;border-top:3px solid var(--gold);box-shadow:0 10px 30px rgba(15,33,65,.06)}
+.dvos .stage .k{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+.dvos .stage h3{margin:6px 0 8px}
+.dvos .stage p{margin:0;color:var(--muted);font-size:14px}
+/* features grid */
+.dvos .feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:900px){.dvos .feat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.dvos .feat{grid-template-columns:1fr}}
+.dvos .fbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px}
+.dvos .fbox h3{font-size:18px;margin-bottom:12px}
+.dvos .fbox ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14px;color:rgba(255,255,255,.78)}
+.dvos .fbox li{padding-left:20px;position:relative}
+.dvos .fbox li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--gold)}
+/* week comparison */
+.dvos .weeks{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media(max-width:820px){.dvos .weeks{grid-template-columns:1fr}}
+.dvos .week{border-radius:18px;padding:30px 28px}
+.dvos .week.old{background:#fff;border:1px solid var(--line)}
+.dvos .week.new{background:var(--navy);color:rgba(255,255,255,.85)}
+.dvos .week.new h3{color:#fff}
+.dvos .week .lab{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.dvos .week.new .lab{color:var(--gold)}
+.dvos .week ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:14.5px}
+.dvos .week li{display:flex;gap:10px}
+.dvos .week.old li:before{content:"\2715";color:#b4483a;font-weight:700}
+.dvos .week.new li:before{content:"\2713";color:var(--gold);font-weight:700}
+/* pricing */
+.dvos .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:980px;margin:0 auto}
+@media(max-width:780px){.dvos .plans{grid-template-columns:1fr}}
+.dvos .plan{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px 30px;display:grid;gap:14px;align-content:start}
+.dvos .plan.best{border:2px solid var(--gold);box-shadow:0 20px 50px rgba(15,33,65,.12);position:relative}
+.dvos .plan .badge{position:absolute;top:-13px;left:30px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.dvos .price{font-family:"Playfair Display",serif;font-size:44px;color:var(--navy);line-height:1}
+.dvos .price small{font-family:Inter,sans-serif;font-size:14px;color:var(--muted);font-weight:500}
+.dvos .plan p{margin:0;color:var(--muted);font-size:14.5px}
+.dvos .plan ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:14.5px}
+.dvos .plan li{padding-left:24px;position:relative}
+.dvos .plan li:before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:700}
+.dvos .plan .btn{width:100%;margin-top:8px}
+/* compare table */
+.dvos .tbl{overflow-x:auto;border-radius:16px;border:1px solid var(--line);background:#fff;max-width:980px;margin:0 auto}
+.dvos table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+.dvos th,.dvos td{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left}
+.dvos th{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);background:var(--cream)}
+.dvos th.us{color:var(--navy)}
+.dvos td.y{color:#1f7a4d;font-weight:600}
+.dvos td.n{color:#9aa1ad}
+.dvos tr:last-child td{border-bottom:0}
+/* faq */
+.dvos .faq{max-width:880px;margin:0 auto;display:grid;gap:12px}
+.dvos details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 22px}
+.dvos summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600;color:var(--navy);display:flex;justify-content:space-between;gap:16px}
+.dvos summary::-webkit-details-marker{display:none}
+.dvos summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+.dvos details[open] summary:after{content:"\2013"}
+.dvos details p{margin:0 0 18px;color:var(--muted);font-size:14.5px}
+/* final cta */
+.dvos .final{position:relative;background:var(--navy) url("https://www.dreamvalleyrealty.ca/Hero.png") center/cover no-repeat;text-align:center;color:#fff}
+.dvos .final:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,33,65,.93),rgba(10,23,47,.95))}
+.dvos .final .wrap{position:relative;max-width:760px}
+.dvos .final h2{color:#fff;margin:14px 0 14px}
+.dvos .final p{color:rgba(255,255,255,.8);margin:0 0 28px;font-size:17px}
+/* footer */
+.dvos footer{background:var(--navy3);color:rgba(255,255,255,.62);font-size:14px;position:relative}
+.dvos footer:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.dvos .fgrid{display:grid;gap:40px;padding-top:64px;padding-bottom:48px;grid-template-columns:1fr}
+@media(min-width:640px){.dvos .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.dvos .fgrid{grid-template-columns:1.6fr 1fr 1fr 1.2fr}}
+.dvos .fbrand .logo img{height:52px}
+.dvos .fbrand p{margin:18px 0 22px;max-width:340px;line-height:1.7}
+.dvos .fbrand .btn{padding:11px 22px;font-size:13.5px}
+.dvos footer h4{color:#fff;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin:6px 0 20px;display:flex;align-items:center;gap:10px}
+.dvos footer h4:after{content:"";width:24px;height:2px;background:var(--gold)}
+.dvos .flist{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.dvos .flist a{color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s}
+.dvos .flist a:hover{color:var(--gold)}
+.dvos .fci{display:flex;gap:12px;align-items:flex-start}
+.dvos .fci i{flex:0 0 32px;height:32px;border-radius:9px;background:rgba(177,157,120,.14);color:var(--gold);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:14px}
+.dvos .fci small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.dvos .fbar{border-top:1px solid rgba(255,255,255,.08)}
+.dvos .fbar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:20px;padding-bottom:20px;font-size:12.5px;color:rgba(255,255,255,.45)}
+.dvos .fbar a{color:rgba(255,255,255,.6);text-decoration:none;margin-left:18px}
+.dvos .fbar a:first-child{margin-left:0}
+.dvos .fbar a:hover{color:var(--gold)}
+@media(max-width:560px){.dvos section{padding:64px 0}.dvos .hero{padding:60px 0 54px}}
+
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff}
+.dvos [id]{scroll-margin-top:76px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="dvos" id="dvos">
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="#top"><img src="https://www.dreamvalleyrealty.ca/logo1.png" alt="Dream Valley Realty"><span>DV AGENT OS<b>DREAM VALLEY REALTY</b></span></a>
+      <nav class="links">
+        <a href="#platform">Platform</a>
+        <a href="#ai">AI Engine</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#compare">Compare</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-gold" href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a call</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="wrap">
+      <span class="pill">The real estate operating system</span>
+      <h1>Every missed follow-up is a <em>lost deal.</em></h1>
+      <p class="lead">DV Agent OS replies to every new lead by text, email and chat in under a minute, <b>24/7</b>, and keeps following up until they book.</p>
+      <div class="tiles">
+        <div class="tile"><i>1</i>Stop switching between disconnected apps</div>
+        <div class="tile"><i>2</i>AI handles first replies while you focus on clients</div>
+        <div class="tile"><i>3</i>See every lead and deal in one pipeline</div>
+        <div class="tile"><i>4</i>Close more deals without adding hours</div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-gold" href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a free strategy call</a>
+        <a class="btn btn-ghost" href="#platform">See what's included</a>
+      </div>
+      <div class="trust"><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Built for Dream Valley Realty agents across the GTA</div>
+    </div>
+  </div>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Speed to lead</span><span>AI assistant</span><span>Missed-call text back</span><span>Lead funnels</span><span>14-day nurture</span><span>Open house kit</span><span>Past client nurture</span><span>Deal reminders</span><span>Google reviews</span><span>Canadian anti-spam ready</span>
+      <span>Speed to lead</span><span>AI assistant</span><span>Missed-call text back</span><span>Lead funnels</span><span>14-day nurture</span><span>Open house kit</span><span>Past client nurture</span><span>Deal reminders</span><span>Google reviews</span><span>Canadian anti-spam ready</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="bg-cream">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">Built in, not bolted on</span>
+        <h2>What runs for you <em>from day one.</em></h2>
+        <p>Every piece is pre-built and connected, so a new lead is answered, followed up and tracked without you touching it.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>60<small> sec</small></b><span>Or less, from form or missed call to first personal text and email</span></div>
+        <div class="stat"><b>24<small>/7</small></b><span>AI assistant replying by text and chat, and booking calls</span></div>
+        <div class="stat"><b>14<small> days</small></b><span>Of nurture emails and texts after every funnel sign-up</span></div>
+        <div class="stat"><b>35<small>+</small></b><span>Ready-made automations across every stage of the client journey</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI ENGINE -->
+  <section class="bg-navy" id="ai">
+    <div class="wrap split">
+      <div>
+        <div class="phone">
+          <div class="phead"><span><b>Sarah M.</b> &middot; Buyer lead</span><span class="live">AI assistant</span></div>
+          <div class="chat">
+            <div class="msg out">Hi Sarah, it's your Dream Valley agent. Thanks for asking about homes in Markham! Are you looking to buy in the next few months?</div>
+            <div class="msg in">Yes, hopefully by spring. Budget around $900k.</div>
+            <div class="msg out">Great. Are you pre-approved yet? I can also book you a free 15-minute call to go over options.</div>
+            <div class="msg in">Not yet. A call would help.</div>
+            <div class="msg out">Perfect, you're booked for Thursday at 4 PM. You'll get a reminder before the call.</div>
+          </div>
+          <div class="tags"><span>Area: Markham</span><span>Budget: $900k</span><span>Timeline: Spring</span><span class="ok">Call booked</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">AI Engine</span>
+        <h2 style="margin:12px 0 14px">It answers the leads <em>you never get to.</em></h2>
+        <p style="margin:0">The AI assistant replies in seconds, asks the right questions, saves the answers to the contact and books the call. When a lead asks for a person, it steps back and alerts you.</p>
+        <div class="mini">
+          <div><b>60 sec</b><span>First reply to every new lead</span></div>
+          <div><b>24/7</b><span>Text, website chat and social</span></div>
+          <div><b>7</b><span>Qualifying answers saved per lead</span></div>
+          <div><b>1 tap</b><span>Hand-off back to you</span></div>
+        </div>
+        <ul class="points">
+          <li><span class="n">01</span><div><b>Trained for real estate</b><span>Buyer and seller questions, timelines, budgets and pre-approval.</span></div></li>
+          <li><span class="n">02</span><div><b>Respects quiet hours and consent</b><span>Texts only go to people who agreed, inside daytime hours.</span></div></li>
+          <li><span class="n">03</span><div><b>You stay in control</b><span>Any reply from you pauses the assistant for that conversation.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section id="platform">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">Platform</span>
+        <h2>Everything in <em>one system.</em></h2>
+        <p>One contact record behind every text, email, call, form and deal, so nothing falls through the cracks.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ic">&#9638;</div>
+          <h3>One pipeline for every deal</h3>
+          <p>Buyer, seller and lease pipelines with real estate stages, from new lead to closed.</p>
+          <div class="pipe">
+            <div><b>12</b>New lead</div><div><b>7</b>Showing</div><div><b>4</b>Offer</div><div><b>3</b>Conditional</div><div><b>2</b>Firm</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ic">&#9993;</div>
+          <h3>AI texting and instant response</h3>
+          <p>Every new lead gets a personal text and email in under a minute, then follow-ups on days 2, 4 and 7.</p>
+          <ul><li>Missed-call text back</li><li>AI assistant on text and chat</li><li>Agent alerts and call tasks</li></ul>
+        </div>
+        <div class="card">
+          <div class="ic">&#10148;</div>
+          <h3>Marketing that runs itself</h3>
+          <p>Lead funnels with free guides, a 14-day nurture, open house follow-up and past client touchpoints.</p>
+          <ul><li>5 ready-made lead funnels</li><li>Home anniversary and birthday messages</li><li>Monthly market update</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGES -->
+  <section class="bg-cream">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">How it works</span>
+        <h2>Four stages, and <em>each one feeds the next.</em></h2>
+      </div>
+      <div class="stages">
+        <div class="stage"><span class="k">Stage 01</span><h3>Capture</h3><p>Funnels, Facebook leads, Realtor.ca inquiries, missed calls and open house sign-ins all land in one place.</p></div>
+        <div class="stage"><span class="k">Stage 02</span><h3>Engage</h3><p>Instant text and email, the AI assistant, and a call task for you, all within minutes.</p></div>
+        <div class="stage"><span class="k">Stage 03</span><h3>Convert</h3><p>Booked calls stop the follow-ups. Deal reminders keep conditions and closings on track.</p></div>
+        <div class="stage"><span class="k">Stage 04</span><h3>Grow</h3><p>Past client nurture, referral asks, Google reviews and reactivation of old contacts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="bg-navy">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">Included</span>
+        <h2>Everything that <em>comes with it.</em></h2>
+      </div>
+      <div class="feat">
+        <div class="fbox"><h3>Lead capture</h3><ul><li>Buyer, seller, first-time buyer, pre-construction and investor funnels</li><li>Free guides and VIP lists</li><li>Open house QR sign-in</li></ul></div>
+        <div class="fbox"><h3>Communication</h3><ul><li>Instant text and email replies</li><li>Missed-call text back</li><li>Voicemail alerts</li></ul></div>
+        <div class="fbox"><h3>AI nurture</h3><ul><li>AI assistant on text and website chat</li><li>14-day funnel nurture</li><li>Old contact reactivation</li></ul></div>
+        <div class="fbox"><h3>Pipeline and deals</h3><ul><li>Buyer, seller and lease pipelines</li><li>Condition and closing reminders</li><li>Stale deal check-ins</li></ul></div>
+        <div class="fbox"><h3>Booking</h3><ul><li>Free strategy call calendar</li><li>Booking stops all follow-ups</li><li>Agent alerts for every booking</li></ul></div>
+        <div class="fbox"><h3>Past clients and reviews</h3><ul><li>Home anniversary, birthday and holidays</li><li>Referral asks at 30 days and 6 months</li><li>Google review requests</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAME WEEK -->
+  <section>
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">The difference</span>
+        <h2>The same week, <em>run two ways.</em></h2>
+      </div>
+      <div class="weeks">
+        <div class="week old">
+          <div class="lab">Without DV Agent OS</div>
+          <h3>Busy, but leads slip away</h3>
+          <ul>
+            <li>New leads wait hours for a reply while you're at showings</li>
+            <li>Missed calls go to voicemail and never call back</li>
+            <li>Follow-ups live in your head or a notebook</li>
+            <li>Past clients hear from you once a year, if at all</li>
+          </ul>
+        </div>
+        <div class="week new">
+          <div class="lab">With DV Agent OS</div>
+          <h3>Every lead handled, every time</h3>
+          <ul>
+            <li>Every lead gets a reply in under a minute, day or night</li>
+            <li>Missed callers get a text back right away</li>
+            <li>Nurture, reminders and tasks run automatically</li>
+            <li>Past clients stay in touch and send referrals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="bg-cream" id="pricing">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">Pricing</span>
+        <h2>Two plans. <em>Simple pricing.</em></h2>
+        <p>Everything is set up for you. No long contracts.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Complete Agent System</h3>
+          <div class="price">$XX<small> / month</small></div>
+          <p>Everything you need to capture, follow up and close.</p>
+          <ul><li>5 lead funnels with free guides</li><li>Instant text and email response</li><li>Missed-call text back</li><li>14-day nurture and pipeline</li><li>Open house kit and deal reminders</li></ul>
+          <a class="btn btn-navy" href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a call</a>
+        </div>
+        <div class="plan best">
+          <span class="badge">Most popular</span>
+          <h3>Full AI Engine</h3>
+          <div class="price">$XX<small> / month</small></div>
+          <p>The complete system plus the AI assistant and growth tools.</p>
+          <ul><li>Everything in Complete Agent System</li><li>24/7 AI assistant on text and chat</li><li>Old contact reactivation campaigns</li><li>Past client nurture and referral asks</li><li>Google review requests</li></ul>
+          <a class="btn btn-gold" href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">Compare</span>
+        <h2>DV Agent OS vs. <em>a typical real estate CRM</em></h2>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Feature</th><th class="us">DV Agent OS</th><th>Typical CRM</th></tr></thead>
+          <tbody>
+            <tr><td>Reply to new leads in under a minute</td><td class="y">Included</td><td class="n">Manual</td></tr>
+            <tr><td>AI assistant that books calls</td><td class="y">Included</td><td class="n">Add-on</td></tr>
+            <tr><td>Missed-call text back</td><td class="y">Included</td><td class="n">Not included</td></tr>
+            <tr><td>Ready-made lead funnels</td><td class="y">5 included</td><td class="n">Build your own</td></tr>
+            <tr><td>Past client and referral program</td><td class="y">Included</td><td class="n">Manual</td></tr>
+            <tr><td>Google review requests</td><td class="y">Included</td><td class="n">Separate tool</td></tr>
+            <tr><td>Canadian anti-spam (CASL) consent built in</td><td class="y">Included</td><td class="n">Varies</td></tr>
+            <tr><td>Set up for you</td><td class="y">Done for you</td><td class="n">DIY</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-cream" id="faq">
+    <div class="wrap">
+      <div class="shead center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions agents ask <em>before switching.</em></h2>
+      </div>
+      <div class="faq">
+        <details><summary>What is DV Agent OS?</summary><p>A ready-made system for Dream Valley Realty agents that captures leads, replies to them in under a minute, follows up automatically and keeps past clients in touch, all in one place.</p></details>
+        <details><summary>How long does setup take?</summary><p>Everything is pre-built. We connect your phone number, calendar and branding, and you're live once that's done.</p></details>
+        <details><summary>Will the AI talk to my leads without me knowing?</summary><p>The AI assistant only replies to your DV leads, saves every answer to the contact and alerts you when a lead wants a person. Any reply from you pauses it for that conversation.</p></details>
+        <details><summary>Is it compliant with Canadian anti-spam rules?</summary><p>Yes. Forms collect consent, texts only go to people who agreed, and STOP replies are honoured automatically.</p></details>
+        <details><summary>Can I keep my existing contacts?</summary><p>Yes. Import them, and the reactivation campaign checks consent before reaching out.</p></details>
+        <details><summary>What does it cost?</summary><p>See the two plans above, or book a call and we'll walk you through which fits your business.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <span class="eyebrow" style="justify-content:center">Ready when you are</span>
+      <h2>Stop losing deals to <em>slow follow-up.</em></h2>
+      <p>Book a free 15-minute call and see DV Agent OS working on your own leads.</p>
+      <div class="ctas"><a class="btn btn-gold" href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a free strategy call</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap fgrid">
+      <div class="fbrand">
+        <a class="logo" href="#top"><img src="https://www.dreamvalleyrealty.ca/logo1.png" alt="Dream Valley Realty"><span>DV AGENT OS<b>DREAM VALLEY REALTY</b></span></a>
+        <p>Helping Dream Valley Realty agents reply faster, follow up longer and keep every client for life.</p>
+        <a class="btn btn-gold" href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a free call</a>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul class="flist">
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#ai">AI Engine</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#compare">Compare</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="flist">
+          <li class="fci"><i>&#9742;</i><div><small>Phone</small><a href="tel:+14169519929">+1 (416) 951-9929</a></div></li>
+          <li class="fci"><i>&#9993;</i><div><small>Email</small><a href="mailto:info@dvrealty.ca">info@dvrealty.ca</a></div></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <ul class="flist">
+          <li class="fci"><i>&#9873;</i><div><small>Dream Valley Realty Inc., Brokerage</small>885 Progress Ave, Suite 109<br>Toronto, ON M1H 3G3</div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbar">
+      <div class="wrap">
+        <span>&copy; 2026 Dream Valley Realty Inc., Brokerage &middot; Independently owned and operated</span>
+        <span><a href="#top">Back to top</a><a href="https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q" target="_blank" rel="noopener">Book a call</a></span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
