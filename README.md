@@ -14,4 +14,4 @@ Connect this repo in Netlify (**Add new site → Import an existing project**). 
 
 ## Editing
 - Booking buttons link to `https://link.dvrealty.ca/widget/booking/OGmMikOxrh82G37KMN6Q`
-- Pricing shows `$XX` placeholders in the Pricing section of `index.html`
+- Pricing (Pricing section of `index.html`): Complete Agent System $99/month (was $199), Full AI Engine $299/month (was $499)
